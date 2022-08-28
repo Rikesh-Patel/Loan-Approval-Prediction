@@ -33,9 +33,9 @@ def predict():
                   columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
         my_prediction = ' '.join(predict_model(classifier, df)['Label'].values)
         
-        return redirect(url_for('predict.html'))
+        return redirect(url_for('prediction'))
 
-@app.route('/predict.html')
+@app.route('/prediction')
 def predict(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area):
 
         df = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)],
