@@ -15,7 +15,7 @@
         <!-- Website Title -->
     	<div class="container">
             <h2 class='container-heading'><span class="heading_font">Loan Approval Predictor</span></h2>
-            <div class='description'>
+            <div class='description'><br>
     			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
     		</div>
     	</div>
@@ -40,18 +40,25 @@
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3+">3+</option></select><br>
-                <input class="form-input" type="text" name="education" placeholder="Education"><br>
 				<select class="form-input" id="education" name="education">
 					<option hidden disabled selected value> </option>
                     <option value="Graduate">Graduate</option>
                     <option value="Not Graduate">Not Graduate</option></select><br>
-                <input class="form-input" type="text" name="self_employed" placeholder="Self-Employed?"><br>
+				<label for="self_employed">Self-employed?</label>
+				<select class="form-input" id="self_employed" name="self_employed">
+					<option hidden disabled selected value> </option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option></select><br>
                 <input class="form-input" type="text" name="income" placeholder="Monthly Income e.g. 2400"><br>
                 <input class="form-input" type="text" name="co_income" placeholder="Coapplicant Monthly Income eg. 2400"><br>
                 <input class="form-input" type="text" name="loan" placeholder="Loan Amount (in thousands) e.g. 300"><br>
-                <input class="form-input" type="text" name="term" placeholder="Loan Term (in months) eg. 360"><br>
-                <input class="form-input" type="text" name="history" placeholder="Credit History"><br>
-                <input class="form-input" type="text" name="area" placeholder="Property Area"><br>
+                <input class="form-input" type="text" name="term" placeholder="Loan Term (in months) e.g. 360"><br>
+                <input class="form-input" type="text" name="history" placeholder="Credit History Factor (0-1) e.g. 0.83"><br>
+				<select class="form-input" id="area" name="area">
+					<option hidden disabled selected value> </option>
+                    <option value="Rural">Rural</option>
+					<option value="Urban">Urban</option>
+                    <option value="Semiurban">Semiurban</option></select><br>
 
         		<input type="submit" class="my-cta-button" value="Predict">
         	</form>

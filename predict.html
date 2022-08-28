@@ -15,20 +15,20 @@
         <!-- Website Title -->
 		<div class="container">
             <h2 class='container-heading'><span class="heading_font">Loan Approval Predictor</span></h2>
-            <div class='description'>
+            <div class='description'><br>
     			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
     		</div>
     	</div>
 
 		<!-- Result -->
 		<div class="results">
-			{% if prediction=='N' %}
+			{{% if prediction=='N' %}}
 				<h1>Prediction: <span class='danger'>Oops! You were not approved.</span></h1>
 				<img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
-			{% elif prediction=='Y' %}
+			{{% elif prediction=='Y' %}}
 				<h1>Prediction: <span class='safe'>Great! You were approved!</span></h1>
 				<img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
-			{% endif %}
+			{{% endif %}}
 		</div>
 
 
