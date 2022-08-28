@@ -14,7 +14,7 @@ app = Flask(__name__)
 def home():
 	return render_template('index.html')
 
-@app.route('/predict')
+@app.route('/predict.html')
 def predict():
     if request.method == 'POST':
         gender = request.form['gender']
