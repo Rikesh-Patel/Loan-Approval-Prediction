@@ -1,5 +1,5 @@
 # Importing essential libraries
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, redirect
 import pickle
 from pycaret.classification import load_model,predict_model
 import pandas as pd
@@ -14,9 +14,9 @@ app = Flask(__name__)
 def home():
 	return render_template('index.html')
 
-@app.route('/predict.html', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def predict():
-   
+    if request.method == 'POST':
         gender = request.form['gender']
         married = request.form['married']
         deps = request.form['dep']
@@ -29,6 +29,15 @@ def predict():
         history = float(request.form['history'])
         area = request.form['area']
         
+        df = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)],
+                  columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
+        my_prediction = ' '.join(predict_model(classifier, df)['Label'].values)
+        
+        return redirect(url_for('predict.html'))
+
+@app.route('/predict.html')
+def predict(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area):
+
         df = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)],
                   columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
         my_prediction = ' '.join(predict_model(classifier, df)['Label'].values)
