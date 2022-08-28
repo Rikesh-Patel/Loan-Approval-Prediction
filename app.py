@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-	return render_template('index.html')
+	return render_template('input.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -32,7 +32,7 @@ def predict():
         data = np.array([[gender,married,deps,education,self_employed,income,co_income,loan,term,history,area]])
         my_prediction = classifier.predict(data)
         
-        return render_template('result.html', prediction=my_prediction)
+        return render_template('index.html', prediction=my_prediction)
 
 if __name__ == '__main__':
 	app.run(debug=True)
