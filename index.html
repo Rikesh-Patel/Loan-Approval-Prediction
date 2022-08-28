@@ -22,7 +22,7 @@
 
         <!-- Text Area -->
     	<div class="ml-container">
-    		<form action="predict.html" method="POST">
+    		<form  action="predict.html" method="POST" >
 				<label for="gender">Sex</label>
                 <select class="form-input" id="gender" name="gender">
 					<option hidden disabled selected value> </option>
@@ -60,7 +60,7 @@
 					<option value="Urban">Urban</option>
                     <option value="Semiurban">Semiurban</option></select><br>
 
-        		<input type="submit" class="my-cta-button" value="Predict">
+        		<input type="submit" id='predict' class="my-cta-button" value="Predict" disabled="disabled" />
         	</form>
     	</div>
 
@@ -219,3 +219,24 @@ body{
 
 
 </style>
+
+<script>
+
+(function() {
+    $('form > input').keyup(function() {
+
+        var empty = false;
+        $('form > input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#predict').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        } else {
+            $('#predict').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        }
+    });
+})()
+</script>
