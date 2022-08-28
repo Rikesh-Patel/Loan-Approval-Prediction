@@ -40,6 +40,7 @@
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3+">3+</option></select><br>
+				<label for="education">Education</label>
 				<select class="form-input" id="education" name="education">
 					<option hidden disabled selected value> </option>
                     <option value="Graduate">Graduate</option>
@@ -54,13 +55,15 @@
                 <input class="form-input" type="text" name="loan" placeholder="Loan Amount (in thousands) e.g. 300"><br>
                 <input class="form-input" type="text" name="term" placeholder="Loan Term (in months) e.g. 360"><br>
                 <input class="form-input" type="text" name="history" placeholder="Credit History Factor (0-1) e.g. 0.83"><br>
+				
+				<label for="area">Property Area</label>
 				<select class="form-input" id="area" name="area">
 					<option hidden disabled selected value> </option>
                     <option value="Rural">Rural</option>
 					<option value="Urban">Urban</option>
                     <option value="Semiurban">Semiurban</option></select><br>
 
-        		<input type="submit" id='predict' class="my-cta-button" value="Predict" disabled="disabled" />
+        		<input type="submit" id='predict' class="my-cta-button" value="Predict" />
         	</form>
     	</div>
 
@@ -139,7 +142,7 @@ body{
 }
 
 .form-input {
-	text-align: left;
+	text-align: right;
 	width: 350px;
 	height: 25px;
 	margin-bottom: 5px;
