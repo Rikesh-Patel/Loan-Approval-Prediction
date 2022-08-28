@@ -16,7 +16,7 @@ def home():
 
 @app.route('/predict.html', methods=['GET','POST'])
 def predict():
-    if request.method == 'POST':
+   
         gender = request.form['gender']
         married = request.form['married']
         deps = request.form['dep']

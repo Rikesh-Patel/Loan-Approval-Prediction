@@ -24,10 +24,11 @@
 		<div class="results">
 		{% if prediction=='N' %}
 			<h1>Prediction: <span class='danger'>Sorry, you were not approved.</span></h1>
-			<img class="gif" src="diabetes.webp" alt="Diabetes Image">
-		{% else prediction=='Y' %}
+			<img class="gif" src="diabetes.webp">
+		{% elif prediction=='Y' %}
 			<h1>Prediction: <span class='safe'>Great! You were approved!</span></h1>
 			<img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
+		{% else %}
 		{% endif %}
 		</div>
 
