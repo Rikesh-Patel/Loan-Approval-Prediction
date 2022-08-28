@@ -10,11 +10,11 @@ classifier = load_model(open(filename, 'rb'))
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 def home():
 	return render_template('index.html')
 
-@app.route('/predict.html', methods=['POST'])
+@app.route('/predict.html', methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
         gender = request.form['gender']

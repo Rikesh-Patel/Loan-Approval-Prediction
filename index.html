@@ -22,7 +22,7 @@
 
         <!-- Text Area -->
     	<div class="ml-container">
-    		<form  action="predict.html" method="POST" >
+    		<form style="text-align: right" action="predict.html" method="post" >
 				<label for="gender">Sex</label>
                 <select class="form-input" id="gender" name="gender">
 					<option hidden disabled selected value> </option>
@@ -137,12 +137,13 @@ body{
 
 /* Text Area */
 .ml-container{
+	text-align: right;
     margin: 30px 0;
 	flex: 1 0 auto;
 }
 
 .form-input {
-	text-align: right;
+	text-align: center;
 	width: 350px;
 	height: 25px;
 	margin-bottom: 5px;
