@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Diabetes Predictor</title>
+		<title>Loan Predictor</title>
 		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
 
         <!-- Website Title -->
 		<div class="container">
-            <h2 class='container-heading'><span class="heading_font">Diabetes Predictor</span></h2>
+            <h2 class='container-heading'><span class="heading_font">Loan Approval Predictor</span></h2>
             <div class='description'>
     			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
     		</div>
@@ -22,23 +22,16 @@
 
 		<!-- Result -->
 		<div class="results">
-			{% if prediction==1 %}
+			{% if prediction=='Y' %}
 				<h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
 				<img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
-			{% elif prediction==0 %}
+			{% elif prediction=='N' %}
 				<h1>Prediction: <span class='safe'>Great! You DON'T have diabetes.</span></h1>
 				<img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
 			{% endif %}
 		</div>
 
-		<!-- Footer -->
-       <div class='footer'>
-           <div class="contact">
-               <a target="_blank" href="https://github.com/anujvyas/Diabetes-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
-               <a target="_blank" href="https://www.linkedin.com/in/anujkvyas"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
-           </div>
-           <p class='footer-description'>Made with ❤️ by Anuj Vyas.</p>
-       </div>
+
 
 	</body>
 </html>
