@@ -23,12 +23,9 @@
         <!-- Text Area -->
     	<div class="ml-container">
     		<form action="{{ url_for('predict') }}" method="POST">
-                <input class="form-input" type="text" name="gender" placeholder="Sex">
-                <select id="cars" name="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option> </select>
+                <select class="form-input" id="gender" name="gender" placeholder="Sex">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                 
                 <br>
                 <input class="form-input" type="text" name="married" placeholder="Married?"><br>
@@ -49,8 +46,8 @@
         <!-- Footer -->
        <div class='footer'>
            <div class="contact">
-               <a target="_blank" href="https://github.com/anujvyas/Diabetes-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
-               <a target="_blank" href="https://www.linkedin.com/in/anujkvyas"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://github.com/Rikesh-Patel/Loan-Approval-Prediction"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/rikeshpatel-io/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
            </div>
            <p class='footer-description'>Created by Rikesh Patel.</p>
        </div>
