@@ -32,17 +32,13 @@ def predict():
         df = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)],
                   columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
         my_prediction = ' '.join(predict_model(classifier, df)['Label'].values)
-        
-        return redirect(url_for('prediction'))
+        if my_prediction == 'Y':
+            return render_template('predict.html')
+        elif my_prediction == 'N':
+            return render_template('index.html')
+        else:
+            return render_template('test.csv')
 
-@app.route('/prediction')
-def predict(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area):
-
-        df = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)],
-                  columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
-        my_prediction = ' '.join(predict_model(classifier, df)['Label'].values)
-        
-        return render_template('predict.html', prediction=my_prediction)
 
 if __name__ == '__main__':
 	app.run(debug=True)
