@@ -10,11 +10,11 @@ classifier = load_model(open(filename, 'rb'))
 
 app = Flask(__name__)
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/')
 def home():
 	return render_template('index.html')
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/predict.html')
 def predict():
     if request.method == 'POST':
         gender = request.form['gender']
@@ -33,9 +33,9 @@ def predict():
                   columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
         my_prediction = ' '.join(predict_model(classifier, df)['Label'].values)
         if my_prediction == 'Y':
-            return render_template('predict.html')
-        elif my_prediction == 'N':
             return render_template('index.html')
+        elif my_prediction == 'N':
+            return render_template('predict.html')
         else:
             return render_template('test.csv')
 
