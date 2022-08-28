@@ -14,7 +14,7 @@ app = Flask(__name__)
 def home():
 	return render_template('index.html')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/result.html', methods=['POST'])
 def predict():
     if request.method == 'POST':
         gender = request.form['gender']
@@ -32,7 +32,7 @@ def predict():
         data = np.array([[gender,married,deps,education,self_employed,income,co_income,loan,term,history,area]])
         my_prediction = classifier.predict(data)
         
-        return render_template('index.html', prediction=my_prediction)
+        return render_template('result.html', prediction=my_prediction)
 
 if __name__ == '__main__':
 	app.run(debug=True)
