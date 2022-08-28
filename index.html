@@ -31,10 +31,20 @@
 				<label for="married">Married</label>
 				<select class="form-input" id="married" name="married">
 					<option hidden disabled selected value> </option>
-                    <option value="Male">Yes</option>
-                    <option value="Female">No</option></select><br>
-                <input class="form-input" type="text" name="deps" placeholder="No. of Dependents"><br>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option></select><br>
+				<label for="deps">No. of Dependents</label>
+				<select class="form-input" id="deps" name="deps">
+					<option hidden disabled selected value> </option>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3+">3+</option></select><br>
                 <input class="form-input" type="text" name="education" placeholder="Education"><br>
+				<select class="form-input" id="education" name="education">
+					<option hidden disabled selected value> </option>
+                    <option value="Graduate">Graduate</option>
+                    <option value="Not Graduate">Not Graduate</option></select><br>
                 <input class="form-input" type="text" name="self_employed" placeholder="Self-Employed?"><br>
                 <input class="form-input" type="text" name="income" placeholder="Monthly Income e.g. 2400"><br>
                 <input class="form-input" type="text" name="co_income" placeholder="Coapplicant Monthly Income eg. 2400"><br>
@@ -84,7 +94,7 @@ body{
 	position: relative;
 	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
 	background-size: 500% 500%;
-	animation: change-gradient 10s ease-in-out infinite;
+	animation: change-gradient 1000s ease-in-out infinite;
 }
 @keyframes change-gradient {
 	0%{
@@ -104,14 +114,13 @@ body{
 
 .heading_font{
     color: #ffffff;
-	font-family: 'Pacifico', cursive;
+	font-family: 'Arial', cursive;
 	font-size: 35px;
 	font-weight: normal;
 }
 
 .description p{
 	color: #ffffff;
-    font-style: italic;
     font-size: 14px;
     margin: -5px 0 0;
 }
@@ -123,7 +132,7 @@ body{
 }
 
 .form-input {
-	text-align: center;
+	text-align: left;
 	width: 350px;
 	height: 25px;
 	margin-bottom: 5px;
