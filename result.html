@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Loan Predictor</title>
+		<title>Loan Approval Predictor</title>
 		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
@@ -22,11 +22,11 @@
 
 		<!-- Result -->
 		<div class="results">
-			{% if prediction=='Y' %}
-				<h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
+			{% if prediction=='N' %}
+				<h1>Prediction: <span class='danger'>Oops! You were not approved.</span></h1>
 				<img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
-			{% elif prediction=='N' %}
-				<h1>Prediction: <span class='safe'>Great! You DON'T have diabetes.</span></h1>
+			{% elif prediction=='Y' %}
+				<h1>Prediction: <span class='safe'>Great! You were approved!</span></h1>
 				<img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
 			{% endif %}
 		</div>
