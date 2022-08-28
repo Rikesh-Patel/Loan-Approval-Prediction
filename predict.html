@@ -4,8 +4,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Loan Approval Predictor</title>
-		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="shortcut icon" href="diabetes-favicon.ico">
+		<link rel="stylesheet" type="text/css" href="'static/styles.css'">
 		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 	</head>
@@ -23,14 +23,15 @@
 		<!-- Result -->
 		<div class="results">
 			
-		{% if prediction=='N' %}
+	{# if prediction=='N' }
 			<h1>Prediction: <span class='danger'>Sorry, you were not approved.</span></h1>
-			<img class="gif" src="diabetes.webp" />
-		{% elif prediction=='Y' %}
+			<img class="gif" src="static/diabetes.webp" />
+		{:else if prediction=='Y' }
 			<h1>Prediction: <span class='safe'>Great! You were approved!</span></h1>
-			<img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
-		{% else %}
-		{% endif %}
+			<img class="gif1" src="static/no-diabetes.webp" />
+		{:else}
+	{/if}
+
 		</div>
 
 
