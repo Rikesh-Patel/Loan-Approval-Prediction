@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "src": "/(.*)",
-        "dest": "/templates"
+        "dest": "/templates/index"
       }
     ]
   }
