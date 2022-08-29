@@ -15,4 +15,4 @@ def test():
 @app.route('/result')
 def result():
    dict = {'phy':50,'che':60,'maths':70}
-   return render_template('result.html', result = dict)
+   return render_template('predict.html', result = dict)
