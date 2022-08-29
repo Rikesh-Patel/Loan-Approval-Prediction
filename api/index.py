@@ -5,7 +5,7 @@ import numpy as np
 
 # Load the LDA model
 filename = 'Loan-Model.pkl'
-classifier = load_model(open(filename, 'rb'))
+classifier = pickle.load(open(filename, 'rb'))
 
 app = Flask(__name__)
 
