@@ -27,17 +27,12 @@ def predict():
         term = float(request.form['term'])
         history = float(request.form['history'])
         area = request.form['area']
-        url = os.environ["REQUEST_URI"]
-        print(url)
+        
         df = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)],
                   columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
         my_prediction = ' '.join(predict_model(classifier, df)['Label'].values)
-        if my_prediction == 'Y':
-            return render_template('index.html'), print(url)
-        elif my_prediction == 'N':
-            return render_template('predict.html')
-        else:
-            return render_template('test.csv')
+        return render_template('predict.html', prediction = my_prediction)
+        
 
 
 if __name__ == '__main__':
