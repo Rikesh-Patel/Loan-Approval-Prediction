@@ -1,9 +1,8 @@
 # Importing essential libraries
 from flask import Flask, render_template, request
-import pickle
 from pycaret.classification import load_model,predict_model
 import pandas as pd
-import os
+
 # Load the LDA model
 filename = 'Loan-Model.pkl'
 classifier = load_model(open(filename, 'rb'))
