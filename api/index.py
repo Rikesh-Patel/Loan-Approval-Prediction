@@ -1,11 +1,10 @@
 # Importing essential libraries
 from flask import Flask, render_template, request
 import pickle
-import numpy as np
+import pandas as pd
 
 # Load the LDA model
-filename = 'Loan-Model.pkl'
-classifier = pickle.load(open(filename, 'rb'))
+classifier = pickle.load(open('Loan-Model.pkl', 'rb'))
 
 app = Flask(__name__)
 
@@ -26,10 +25,13 @@ def predict():
         term = float(request.form['term'])
         history = float(request.form['history'])
         area = request.form['area']
+	
+	
+	data = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)],
+			  columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
+        my_prediction = int(classifier.predict(data))
+        return render_template('predict.html', prediction = my_prediction)
         
-       
-        
-
 
 if __name__ == '__main__':
 	app.run(debug=True)
