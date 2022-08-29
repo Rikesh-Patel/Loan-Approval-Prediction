@@ -56,7 +56,11 @@
                 <input class="form-input" type="text" name="loan" placeholder="Loan Amount (in thousands) e.g. 300"><br>
                 <input class="form-input" type="text" name="term" placeholder="Loan Term (in months) e.g. 360"><br>
                 <input class="form-input" type="text" name="history" placeholder="Credit History Factor (0-1) e.g. 0.83"><br>
-				
+		<label for="history">Suitable Credit History?</label>
+				<select class="form-input" id="history" name="history">
+					<option hidden disabled selected value> </option>
+                    <option value="1.0">Yes</option>
+                    <option value="0.0">No</option></select><br>		
 				<label for="area">Property Area</label>
 				<select class="form-input" id="area" name="area">
 					<option hidden disabled selected value> </option>
