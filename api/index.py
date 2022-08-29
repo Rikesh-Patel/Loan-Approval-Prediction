@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request
 import pickle
 import pandas as pd
+import sklearn
 
 # Load the LDA model
 classifier = pickle.load(open('Loan-Model.pkl', 'rb'))
