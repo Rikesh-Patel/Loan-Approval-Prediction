@@ -1,7 +1,7 @@
 # Importing essential libraries
 from flask import Flask, render_template, request
-from pycaret.classification import load_model,predict_model
-import pandas as pd
+import pickle
+import numpy as np
 
 # Load the LDA model
 filename = 'Loan-Model.pkl'
@@ -27,10 +27,7 @@ def predict():
         history = float(request.form['history'])
         area = request.form['area']
         
-        df = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)],
-                  columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
-        my_prediction = ' '.join(predict_model(classifier, df)['Label'].values)
-        return render_template('predict.html', prediction = my_prediction)
+       
         
 
 
