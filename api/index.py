@@ -14,7 +14,7 @@ app = Flask(__name__)
 def home():
 	return render_template('index.html')
 
-@app.route('/predict.html')
+@app.route('/predict')
 def predict():
         gender = request.form['gender']
         married = request.form['married']
