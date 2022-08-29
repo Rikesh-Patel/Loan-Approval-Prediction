@@ -25,8 +25,8 @@ def predict():
         term = float(request.form['term'])
         history = float(request.form['history'])
         area = request.form['area']
-	
-	data = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)], columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
+
+        data = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)], columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
         my_prediction = int(classifier.predict(data))
         return render_template('predict.html', prediction = my_prediction)
         
