@@ -1,3 +1,2 @@
 Flask
 pandas>=0.19
-sklearn
