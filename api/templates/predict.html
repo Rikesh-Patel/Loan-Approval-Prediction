@@ -23,14 +23,13 @@
 		<!-- Result -->
 		<div class="results">
 			
-	{# if prediction=='N' }
+	{% if 1=='2' %}
 			<h1>Prediction: <span class='danger'>Sorry, you were not approved.</span></h1>
 			<img class="gif" src="static/diabetes.webp" />
-		{:else if prediction=='Y' }
+		{% elif 1==1 %}
 			<h1>Prediction: <span class='safe'>Great! You were approved!</span></h1>
 			<img class="gif1" src="static/no-diabetes.webp" />
-		{:else}
-	{/if}
+		{% endif %}
 
 		</div>
 
