@@ -3,9 +3,6 @@ from flask import Flask, render_template, request
 import pickle
 import pandas as pd
 
-# Load the LDA model
-classifier = pickle.load(open('Loan-Model.pkl', 'rb'))
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -25,6 +22,8 @@ def predict():
         term = float(request.form['term'])
         history = float(request.form['history'])
         area = request.form['area']
+	
+	
 
         return render_template('predict.html')
         
