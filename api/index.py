@@ -1,10 +1,10 @@
 # Importing essential libraries
 from flask import Flask, render_template, request
 import pandas as pd
-import joblib
+import pickle
 
 # Load the LDA model
-pipe = joblib.load('Loan-Model.pkl')
+pipe = pickle.load('Loan-Model.pkl')
 
 app = Flask(__name__)
 
