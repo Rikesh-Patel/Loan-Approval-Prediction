@@ -11,9 +11,9 @@ app = Flask(__name__)
 @app.route('/')
 def home():
         if 1==1:
-                return render_template('predict.html')
+                return render_template('templates/predict.html')
         else:
-	        return render_template('index.html')
+	        return render_template('templates/index.html')
 
 @app.route('/predict')
 def predict():
