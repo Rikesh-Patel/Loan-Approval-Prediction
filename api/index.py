@@ -1,11 +1,12 @@
 # Importing essential libraries
 from flask import Flask, render_template, request
 import pandas as pd
-from joblib import load, predict
+from joblib import load
+
 
 # Load the LDA model
 pipe = load('Loan-Model.pkl')
-
+import joblib
 app = Flask(__name__)
 
 @app.route('/')
