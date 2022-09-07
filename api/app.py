@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-        return render_template('index.html')
+        return render_template('templates/index.html')
 
 @app.route('/predict')
 def predict():
@@ -29,7 +29,7 @@ def predict():
         data = pd.DataFrame([(gender,married,deps,education,self_employed,income,co_income,loan,term,history,area)], columns=["Gender","Married","Dependents","Education","Self_Employed","ApplicantIncome","CoapplicantIncome","LoanAmount","Loan_Amount_Term","Credit_History","Property_Area"])
         my_prediction = int(pipe.predict(data))
         
-        return render_template('predict.html', prediction = my_prediction)
+        return render_template('templates/predict.html', prediction = my_prediction)
 
         
 
