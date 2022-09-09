@@ -31,8 +31,8 @@ def predict():
         url= 'https://loan5.herokuapp.com/api'
         import json 
         import requests 
-        # sample data 
-	data={'Gender':1, 'Married':1, 'Dependents':2, 'Education':0, 'Self_Employed':1,'Credit_History':0,'Property_Area':1, 'Income':1} 
+        # sample data
+        data={'Gender':1, 'Married':1, 'Dependents':2, 'Education':0, 'Self_Employed':1,'Credit_History':0,'Property_Area':1, 'Income':1} 
         data = json.dumps(data) 
         # test working 
         requests.post(url, data) 
