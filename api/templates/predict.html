@@ -24,7 +24,7 @@
 		<div class="results">
 			
 	{# if prediction=='N' }
-			<h1>Prediction: <span class='danger'>Sorry, you were not approved.</span></h1>
+			<h1>Prediction: <span class='danger'>{my_prediction} Sorry, you were not approved.</span></h1>
 			<img class="gif" src="static/diabetes.webp" />
 		{:else if prediction=='Y' }
 			<h1>Prediction: <span class='safe'>Great! You were approved!</span></h1>
