@@ -38,7 +38,7 @@ def predict():
         requests.post(url, data) 
         send_req = requests.post(url, data) 
         #my_prediction = int(pipe.predict(data))
-        return render_template('predict.html', prediction = send_req)
+        return render_template('predict.html', prediction = 'Y')
         
 if __name__ == '__main__':
 	app.run(debug=True)
