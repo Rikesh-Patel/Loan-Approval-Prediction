@@ -8,5 +8,5 @@ Deployed at: _https://loan-approval-prediction.vercel.app/_
 
 • A glimpse of the web app:
 
-![GIF](readme_resources/loan-predictor-web-app.gif)
+![GIF](readme_resources/loan-predictor-web-app.webp)
 
